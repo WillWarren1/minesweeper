@@ -11,6 +11,26 @@ body {
   min-height: 100%;
 }
 
+main {
+  background-color: rgb(167, 166, 166);
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.head {
+  border: 1px solid blue;
+}
+
+table {
+  padding: none;
+  border-spacing: 1px;
+  margin-right: 0.15rem;
+}
+
 td {
   width: 1rem;
   height: 1rem;
