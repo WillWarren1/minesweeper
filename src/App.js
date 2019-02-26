@@ -55,6 +55,24 @@ class App extends Component {
       })
   }
 
+  flagTile(x, y) {
+    axios
+      .post(
+        `https://minesweeper-api.herokuapp.com/games/${this.state.id}/flag`,
+        {
+          id: this.state.id,
+          row: x,
+          col: y
+        }
+      )
+      .then(resp => {
+        console.log({ resp })
+        this.setState({
+          game: resp.data.board
+        })
+      })
+  }
+
   render() {
     return (
       <>
@@ -68,7 +86,10 @@ class App extends Component {
                     <tr key={x}>
                       {row.map((col, y) => {
                         return (
-                          <td key={y} onClick={() => this.checkTile(x, y)}>
+                          <td
+                            key={y}
+                            onClick={() => this.checkTile(x, y)}
+                            onContextMenu={() => this.flagTile(x, y)}>
                             {col}
                           </td>
                         )
