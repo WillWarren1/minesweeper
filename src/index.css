@@ -30,7 +30,8 @@ figure {
 }
 
 .head {
-  border: 1px solid blue;
+  border: 1px solid rgb(255, 253, 144);
+  text-align: center;
 }
 
 table {

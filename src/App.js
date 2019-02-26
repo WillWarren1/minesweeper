@@ -49,6 +49,9 @@ class App extends Component {
       )
       .then(resp => {
         console.log({ resp })
+        this.setState({
+          game: resp.data.board
+        })
       })
   }
 
@@ -57,7 +60,7 @@ class App extends Component {
       <>
         <main>
           <figure>
-            <section className="head">this is a header</section>
+            <header className="head">this is a header</header>
             <table>
               <tbody>
                 {this.state.game.map((row, x) => {
@@ -67,7 +70,6 @@ class App extends Component {
                         return (
                           <td key={y} onClick={() => this.checkTile(x, y)}>
                             {col}
-                            {x},{y}
                           </td>
                         )
                       })}
