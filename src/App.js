@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import axios from 'axios'
+import Cell from './components/cell'
 
 // return (
 //   <>
@@ -37,7 +38,7 @@ class App extends Component {
         })
       })
   }
-  checkTile(x, y) {
+  checkTile = (x, y) => {
     axios
       .post(
         `https://minesweeper-api.herokuapp.com/games/${this.state.id}/check`,
@@ -55,7 +56,8 @@ class App extends Component {
       })
   }
 
-  flagTile(x, y) {
+  flagTile = (event, x, y) => {
+    event.preventDefault()
     axios
       .post(
         `https://minesweeper-api.herokuapp.com/games/${this.state.id}/flag`,
@@ -84,14 +86,16 @@ class App extends Component {
                 {this.state.game.map((row, x) => {
                   return (
                     <tr key={x}>
-                      {row.map((col, y) => {
+                      {row.map((content, y) => {
                         return (
-                          <td
+                          <Cell
                             key={y}
-                            onClick={() => this.checkTile(x, y)}
-                            onContextMenu={() => this.flagTile(x, y)}>
-                            {col}
-                          </td>
+                            content={content}
+                            rowIndex={x}
+                            columnIndex={y}
+                            flagTile={this.flagTile}
+                            checkTile={this.checkTile}
+                          />
                         )
                       })}
                     </tr>
