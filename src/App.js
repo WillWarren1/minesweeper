@@ -3,27 +3,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Cell from './components/cell'
 
-// return (
-//   <>
-//    <table>
-//      <tbody>
-//        {this.state.game.map(row => {
-//           return (
-//               <tr>
-//                  {row.map(col => {
-//                    return <td>{col}</td>
-//                  })}
-//               </tr>
-//              )
-//            })}
-//       <tbody>
-//    <table>
-//   </>
-
 class App extends Component {
   state = {
     game: [[], [], [], [], [], [], [], []],
-    id: ''
+    id: '',
+    gameStatus: ''
   }
   componentDidMount() {
     axios
@@ -53,6 +37,20 @@ class App extends Component {
         this.setState({
           game: resp.data.board
         })
+        if (resp.data.state == 'won') {
+          this.setState({
+            gameStatus: 'Congrats! You survived'
+          })
+        } else if (resp.data.state == 'playing') {
+          this.setState({
+            gameStatus: ''
+          })
+        } else {
+          this.setState({
+            gameStatus:
+              'We regret to inform you that you have died. If your remains are not removed from the premises we will be forced to evict them from this plane of existence using the force of a neverending onslaught of exploding mines for the rest of eternity.'
+          })
+        }
       })
   }
 
@@ -79,8 +77,9 @@ class App extends Component {
     return (
       <>
         <main>
+          <h1>{this.state.gameStatus}</h1>
           <figure>
-            <header className="head">this is a header</header>
+            <header className="head">Minesweeper: Pastelcore Edition</header>
             <table>
               <tbody>
                 {this.state.game.map((row, x) => {

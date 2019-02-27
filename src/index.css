@@ -11,11 +11,19 @@ body {
   min-height: 100%;
   background-color: rgb(95, 172, 255);
 }
+h1 {
+  font-size: 1.5rem;
+  color: whitesmoke;
+
+  text-align: center;
+}
 
 main {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 figure {
@@ -27,17 +35,26 @@ figure {
   padding: 1rem;
   flex-direction: column;
   border-radius: 5%;
+  box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
 }
 
 .head {
-  border: 1px solid rgb(255, 253, 144);
+  background-color: rgb(95, 172, 255);
+  /* border: 1px solid rgb(255, 253, 144); */
   text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  border-radius: 8px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: inset 0px 0px 5px 5px rgb(253, 200, 253);
 }
 
 table {
   padding: none;
   border-spacing: 1px;
   margin-right: 0.15rem;
+  margin: 0.5rem;
 }
 
 .hidden {

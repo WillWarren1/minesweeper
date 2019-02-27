@@ -28,7 +28,7 @@ class Cell extends Component {
         picture = this.props.content
         classStyle = 'revealed-class'
     }
-    if (this.props.content !== 'F') {
+    if (this.props.content !== 'F' || this.props.content !== '*') {
       return (
         <td
           className={classStyle}
