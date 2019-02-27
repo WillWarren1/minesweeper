@@ -32,9 +32,10 @@ class Cell extends Component {
       return (
         <td
           className={classStyle}
-          onClick={() =>
+          onClick={() => {
+            console.log(this.props)
             this.props.checkTile(this.props.rowIndex, this.props.columnIndex)
-          }
+          }}
           onContextMenu={event =>
             this.props.flagTile(
               event,
