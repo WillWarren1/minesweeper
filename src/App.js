@@ -8,12 +8,13 @@ class App extends Component {
   state = {
     game: [[], [], [], [], [], [], [], []],
     id: '',
-    gameStatus: ''
+    gameStatus: '',
+    difficulty: ''
   }
   componentDidMount() {
     axios
       .post('https://minesweeper-api.herokuapp.com/games', {
-        difficulty: 0
+        difficulty: this.state.difficulty
       })
       .then(resp => {
         console.log({ resp })
@@ -26,7 +27,7 @@ class App extends Component {
   resetGame = () => {
     axios
       .post('https://minesweeper-api.herokuapp.com/games', {
-        difficulty: 0
+        difficulty: this.state.difficulty
       })
       .then(resp => {
         console.log({ resp })
@@ -37,6 +38,19 @@ class App extends Component {
         })
       })
   }
+
+  changeDifficulty = event => {
+    console.log(event.target.value)
+    this.setState(
+      {
+        difficulty: event.target.value
+      },
+      () => {
+        this.resetGame()
+      }
+    )
+  }
+
   checkTile = (x, y) => {
     console.log({ x, y })
     axios
@@ -96,7 +110,18 @@ class App extends Component {
           <figure>
             <header className="head">
               <p>Minesweeper: Pastel Edition</p>
-              <button onClick={() => this.resetGame()}>Reset Game</button>
+              <nav>
+                <button onClick={() => this.resetGame(this.value)}>
+                  Reset Game
+                </button>
+                <select
+                  onChange={this.changeDifficulty}
+                  value={this.state.difficulty}>
+                  <option value="0">Beginner</option>
+                  <option value="1">Intermediate</option>
+                  <option value="2">Expert</option>
+                </select>
+              </nav>
             </header>
             <table>
               <tbody>

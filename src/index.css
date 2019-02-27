@@ -30,7 +30,7 @@ header p {
 }
 figure {
   background-color: rgb(253, 200, 253);
-  width: 23rem;
+  width: auto;
   display: flex;
   justify-content: center;
   margin: 2rem;
