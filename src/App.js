@@ -23,6 +23,20 @@ class App extends Component {
         })
       })
   }
+  resetGame = () => {
+    axios
+      .post('https://minesweeper-api.herokuapp.com/games', {
+        difficulty: 0
+      })
+      .then(resp => {
+        console.log({ resp })
+        this.setState({
+          game: resp.data.board,
+          id: resp.data.id,
+          gameStatus: ''
+        })
+      })
+  }
   checkTile = (x, y) => {
     console.log({ x, y })
     axios
@@ -80,7 +94,10 @@ class App extends Component {
         <main>
           <h1>{this.state.gameStatus}</h1>
           <figure>
-            <header className="head">Minesweeper: Pastel Edition</header>
+            <header className="head">
+              <p>Minesweeper: Pastel Edition</p>
+              <button onClick={() => this.resetGame()}>Reset Game</button>
+            </header>
             <table>
               <tbody>
                 {this.state.game.map((row, x) => {
