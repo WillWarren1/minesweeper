@@ -40,7 +40,7 @@ table {
   margin-right: 0.15rem;
 }
 
-td {
+.hidden {
   height: 2rem;
   min-width: 2rem;
   text-align: center;
@@ -49,4 +49,15 @@ td {
   border-right: solid 3px rgb(216, 172, 216);
   border-top: solid 3px rgb(255, 218, 255);
   border-left: solid 3px rgb(255, 218, 255);
+}
+
+.revealed-class {
+  height: 2rem;
+  min-width: 2rem;
+  text-align: center;
+  background-color: rgb(253, 231, 253);
+  border-top: solid 3px rgb(216, 172, 216);
+  border-left: solid 3px rgb(216, 172, 216);
+  border-bottom: solid 3px rgb(255, 218, 255);
+  border-right: solid 3px rgb(255, 218, 255);
 }
