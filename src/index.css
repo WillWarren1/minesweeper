@@ -94,3 +94,59 @@ table {
     box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
   }
 }
+
+@media (min-width: 600px) {
+  figure {
+    background-color: rgb(253, 200, 253);
+    width: 23rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 7rem;
+    padding: 1rem;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
+  }
+}
+
+@media (min-width: 800px) {
+  figure {
+    background-color: rgb(253, 200, 253);
+    width: 23rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 20%;
+    padding: 1rem;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
+  }
+}
+
+@media (min-width: 900px) {
+  figure {
+    background-color: rgb(253, 200, 253);
+    width: 23rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+    padding: 1rem;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
+  }
+}
+
+@media (min-width: 1000px) {
+  figure {
+    background-color: rgb(253, 200, 253);
+    width: 23rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 35%;
+    padding: 1rem;
+    flex-direction: column;
+    border-radius: 5%;
+    box-shadow: inset 0px 0px 8px 8px rgb(95, 172, 255);
+  }
+}
