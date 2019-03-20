@@ -11,3 +11,5 @@ I built this game by creating an HTML table populated with data from [this Mines
 
 
 <img src="https://github.com/WillWarren1/minesweeper/blob/master/src/readmeimg/minesweeper.gif">
+
+[click here to view](https://minesweeper-willwarren1.netlify.com/)
