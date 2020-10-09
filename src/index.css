@@ -26,7 +26,7 @@ main {
   flex-direction: column;
 }
 header p {
-  margin: 1rem;
+  margin: 2rem;
 }
 figure {
   background-color: rgb(253, 200, 253);
